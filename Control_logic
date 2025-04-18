@@ -1,0 +1,19 @@
+module ControlUnit (
+    input  [2:0] instr,     
+    output reg [1:0] ALUOp  
+);
+
+always @(*) begin
+    case (instr)
+        3'b000: ALUOp = 2'b00; // ADD
+        3'b001: ALUOp = 2'b00; // ADD
+        3'b010: ALUOp = 2'b01; // NAND
+        3'b011: ALUOp = 2'b11; // PASS
+        3'b100: ALUOp = 2'b00; // ADD
+        3'b101: ALUOp = 2'b00; // ADD
+        3'b111: ALUOp = 2'b11; // PASS
+        default: ALUOp = 2'b00; 
+    endcase
+end
+
+endmodule
